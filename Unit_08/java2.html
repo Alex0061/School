@@ -15,10 +15,8 @@
 
   <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand"><strong>Blade Runner Movies</strong></a>
+    <a class="navbar-brand"><strong>Info About the Movie</strong></a>
     <form class="d-flex">
-      <input id="searchinput" type="search">
-      <button class="btn btn-outline-success" type="submit">Search movie</button>
     </form>
   </div>
 </nav>
@@ -27,7 +25,7 @@
   <div class="container">
     <div class="row">
       <div class="column">
-        <h1>Blade Runner Movies</h1>
+        <h1></h1>
       </div>
     </div>
     <div id="movie" class="row"></div>
@@ -46,9 +44,12 @@
            return parent.appendChild(el);
          }
 
+         var windowUrl = window.location.href;
+         var searchString = windowUrl.split('?');
+          searchString = searchString[1]
 
          const movieContainer = document.getElementById('movie');
-         const url = 'https://www.omdbapi.com/?i=tt1856101&apikey=423e4210';
+         const url = 'https://www.omdbapi.com/?i='+ searchString + '&apikey=423e4210';
 
          fetch(url)
            .then((resp) => resp.json())
