@@ -5,8 +5,10 @@ function createNode(element) {
 function append(parent, el) {
   return parent.appendChild(el);
 }
+
 var x =  document.getElementById('y');
 console.log(x);
+
 const movieContainer = document.getElementById('movie');
 const url = 'http://www.omdbapi.com/?s=Venom&apikey=423e4210';
 
