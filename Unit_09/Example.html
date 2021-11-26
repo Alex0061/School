@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Hello!!</h1>
+    
+    <input type="text" name="person_name" id="person_name">
+    <input type="submit" id="submit_button">
+
+</body>
+<script>
+    localStorage.setItem('myCat', 'Tom');
+
+    var myCat = localStorage.getItem('myCat');
+    console.log(myCat);
+
+    document.getElementById("submit_button").addEventListener("click",function(){
+        localStorage.setItem('name', document.getElementById("person_name").value)
+        var name = localStorage.getItem('name');
+        console.log("The user is : " + name);
+    })
+
+</script>
+</html>
